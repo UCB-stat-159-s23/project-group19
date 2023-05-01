@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: tool
+Version: 0.0.1
+Summary: Provides tools for processing vehicle crash data
+Author: Group19: Tianyi Chen
+Author-email: vincent-c@berkeley.edu
+License: BSD 3-Clause License
+Keywords: tools
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+
+[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/LiaEl886)
