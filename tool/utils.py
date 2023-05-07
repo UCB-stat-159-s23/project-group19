@@ -82,7 +82,7 @@ def read_csv_of_year(year):
     crashes_filename_dict = dict.fromkeys(range(2012, 2024))
     for y in crashes_filename_dict.keys():
         crashes_filename_dict[y] = f"{filename[0: -4]}_{y}.csv"
-        
+
     return pd.read_csv(f"data/{crashes_filename_dict[year]}")
 
 
@@ -101,3 +101,4 @@ def time_processing(crashes):
     crashes["CRASH MONTH"] = month
     crashes["CRASH DAY"] = day
     crashes["CRASH HOUR"] = pd.to_datetime(crashes['CRASH TIME'], format='%H:%M').dt.hour
+    crashes["DAYOFWEEK"] = crashes['CRASH DATE'].dt.dayofweek
