@@ -1,5 +1,6 @@
 [![Jupyter Book Badge](https://jupyterbook.org/badge.svg)](< https://ucb-stat-159-s23.github.io/project-group19/Main.html>)
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/UCB-stat-159-s23/project-group19.git/HEAD)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/UCB-stat-159-s23/project-group19.git/HEAD?labpath=Main.ipynb)
+
 
 ## Project Overview
 In our project, we explored the Motor Vehicles Collisions dataset which comes from the city of New York. The dataset contains information on motor vehicle crashes that occured from 2014-2022.
@@ -10,6 +11,9 @@ This paper aims to analyze the data on motor crashes in New York City over the p
 
 ## Dataset
 The dataset can be found at this link: https://catalog.data.gov/dataset/motor-vehicle-collisions-crashes.
+
+## Environment
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/UCB-stat-159-s23/project-group19.git/HEAD)
 
 ## Useful Commands
 ### Creating an environment from an environment.yml file:
