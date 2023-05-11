@@ -25,6 +25,15 @@ cd _build/html
 python -m http.server
 ```
 and then heading to this URL: https://stat159.datahub.berkeley.edu/user-redirect/proxy/8000/index.html.
+### To build the JupyterBook
+```
+jupyter-book build .
+jupyter-book config sphinx .
+sphinx-build  . _build/html  -D html_baseurl=${JUPYTERHUB_SERVICE_PREFIX}/proxy/absolute/8000
+pip install ghp-import
+ghp-import -n -p -f _build/html
+python -m http.server
+```
 
 ## Testing
 To test the analysis functions, navigate to the root directory and run `pytest`.
