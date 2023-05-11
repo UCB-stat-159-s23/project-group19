@@ -10,20 +10,20 @@ parts:
       title: Project Description
     - file: Analysis.ipynb
       title: Analysis
-  - caption: Exploratory and Feature Importance Analysis
-    chapters:
-    - file: chapters1.ipynb
-      title: chapters 1
-      sections:
-      - file: sections1.ipynb
-        title: sections 1
-      - file: sections2.ipynb
-        title: sections 2
-      - file: sections3.ipynb
-        title: sections 3
-    chapters:
-    - file: chapters2.ipynb
-      title: chapters 2
-    chapters:
-    - file: chapters3.ipynb
-      title: chapters 3
+#  - caption: Exploratory and Feature Importance Analysis
+#    chapters:
+#    - file: chapters1.ipynb
+#      title: chapters 1
+#      sections:
+#      - file: sections1.ipynb
+#        title: sections 1
+#      - file: sections2.ipynb
+#        title: sections 2
+#      - file: sections3.ipynb
+#        title: sections 3
+#    chapters:
+#    - file: chapters2.ipynb
+#      title: chapters 2
+#    chapters:
+#    - file: chapters3.ipynb
+#     title: chapters 3
