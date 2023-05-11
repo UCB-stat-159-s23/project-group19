@@ -1,0 +1,752 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>City of New York Motor Vehicle Crash Data Analysis &#8212; FinalProject</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Main';</script>
+    <link rel="canonical" href="/user/ming.7an//proxy/absolute/8000/Main.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="README.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">FinalProject</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="README.html">
+                    Useful Commands
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Main Menu</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="project-description.html">Project Description</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Analysis.html">Analysis Overview</a></li>
+
+
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/UCB-stat-159-s23/project-group19.git/HEAD/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/Main.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FMain.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Main.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>City of New York Motor Vehicle Crash Data Analysis</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data">Data</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eda">EDA</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-total-casualties">Plotting Total Casualties</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#collision-data-by-borough">Collision Data By Borough</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#collision-data-by-zipcode">Collision Data By Zipcode</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#collision-data-by-vehicle-type">Collision Data By Vehicle Type</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#collisions-by-contributing-factor-vehicle-1">Collisions By Contributing Factor Vehicle 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#collisions-by-vehicle-type-code-1">Collisions By Vehicle Type Code 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#collisions-by-month">Collisions By Month</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#collisions-by-day">Collisions By Day</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#collisions-by-hour-stratified-by-weekday-or-weekend">Collisions By Hour Stratified by Weekday or Weekend</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#collisions-by-hour-from-2014-2022">Collisions by Hour from 2014-2022</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#total-collisions-from-2014-2022">Total Collisions from 2014-2022</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modeling">Modeling</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#author-contributions">Author Contributions</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="city-of-new-york-motor-vehicle-crash-data-analysis">
+<h1>City of New York Motor Vehicle Crash Data Analysis<a class="headerlink" href="#city-of-new-york-motor-vehicle-crash-data-analysis" title="Permalink to this headline">#</a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h2>
+<p>In our project, we explored the Motor Vehicles Collisions dataset which comes from the city of New York. The dataset contains information on motor vehicle crashes that occured from 2012-2013.</p>
+<p>Motor crashes are a major public health and safety concern, particularly in urban areas with high traffic volumes such as New York City. In recent years, the city has seen a significant increase in the number of motor crashes, leading to a growing concern about their impact on public safety, transportation infrastructure, and economic productivity. To address these concerns, data analysis can play a crucial role in identifying the factors that contribute to motor crashes and developing effective strategies for prevention and mitigation.</p>
+<p>This paper aims to analyze the data on motor crashes in New York City over the past few years, with a focus on identifying the key factors associated with these incidents and proposing actionable solutions to reduce their frequency and severity. We aim to find a relationship between the data included and how severe the crashes are for people. We hope the analysis conducted in the project will lead key desicion makers to improving safety and road rules.</p>
+<section id="data">
+<h3>Data<a class="headerlink" href="#data" title="Permalink to this headline">#</a></h3>
+<p>The data used in our project can be found here: <a class="reference external" href="https://catalog.data.gov/dataset/motor-vehicle-collisions-crashes">https://catalog.data.gov/dataset/motor-vehicle-collisions-crashes</a>. This link contains different types of files that can be used for data analysis.</p>
+<p>The dataset includes a row for each crash event. A crash event is recorded by the NYPD when there is a collision that has someone injured or killed, or if the damages incurred exceed $1000.</p>
+<p>We took down key things of note to consider when analyzing our dataset. For starters, we only worked with years 2022 as going back too far in time would cause too much compute for how much memory we have. As such, an area of future exploration would relate to cross checking against previous years to understand how different changes in roads have affected car crashes. Another limitation of the dataset was that the reports are subject to change once the NYPD submits the MV-104AN forms, which can cause changes to crash details. This limited us from use the most current crash data.</p>
+</section>
+</section>
+<section id="eda">
+<h2>EDA<a class="headerlink" href="#eda" title="Permalink to this headline">#</a></h2>
+<p>To begin our analysis, we wanted to explore many different aspects of the data. Below are some of the key plots that were generated as well as a short takeaway of the relationship being displayed.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Image</span><span class="p">,</span> <span class="n">HTML</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="plotting-total-casualties">
+<h3>Plotting Total Casualties<a class="headerlink" href="#plotting-total-casualties" title="Permalink to this headline">#</a></h3>
+<p>We were interested to see what the collision rate looked like across different locations in New York City. In our Anaylsis.ipynb file, you can find an interactive graph which shows each incident report in 2022. Below is a screenshot of the graph.</p>
+<p>Most locations have a count of casualties in the range of 0-6 roughly, with a few locations with around 10-14 casualties.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Image</span><span class="p">(</span><span class="s2">&quot;Charts/Total Casualties.png&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/d055f07826ef6b799f47c313df8e783492329e8502c3517ebfc051e0a06ac35c.png" src="_images/d055f07826ef6b799f47c313df8e783492329e8502c3517ebfc051e0a06ac35c.png" />
+</div>
+</div>
+</section>
+<section id="collision-data-by-borough">
+<h3>Collision Data By Borough<a class="headerlink" href="#collision-data-by-borough" title="Permalink to this headline">#</a></h3>
+<p>The chart below highlights collisions in respective boroughs. The data represents collisions per 1000 people and as such it makes sense that Manhattan’s rate is slightly deflated against Queens, Brooklyn, and the Bronx since its population is much greater. This plot helped us to feel more confident that the location has somewhat of an effect since even when accounting for population, boroughs have significant discrepencies to their number of crashes.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Image</span><span class="p">(</span><span class="s2">&quot;Charts/Collisions per Thousand People by Borough.png&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/4d59526039556e4f1c4bd8903581c4e321b9e6bbc8c1beee080619ef1091e98c.png" src="_images/4d59526039556e4f1c4bd8903581c4e321b9e6bbc8c1beee080619ef1091e98c.png" />
+</div>
+</div>
+</section>
+<section id="collision-data-by-zipcode">
+<h3>Collision Data By Zipcode<a class="headerlink" href="#collision-data-by-zipcode" title="Permalink to this headline">#</a></h3>
+<p>We also created a chloropleth map of collisions by zip code to clearly demarcate which zip codes had the most collisions. The interactive graph helped to get an overvall picture of the situation, but it was hard to visualize clusters by geography so we created this map.</p>
+<p>As demonstrated earlier in the interactive graph, most collision counts are pretty low. In the map below there’s only zip code that has a high count of collisions which we thought was interesting.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Image</span><span class="p">(</span><span class="s2">&quot;Charts/Chloropleth Plot of Zip Code.png&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/7d92a196c58ecf60b7d9933d371d3a13d1c157ac4a9440369b4aae68d7dd70ec.png" src="_images/7d92a196c58ecf60b7d9933d371d3a13d1c157ac4a9440369b4aae68d7dd70ec.png" />
+</div>
+</div>
+</section>
+<section id="collision-data-by-vehicle-type">
+<h3>Collision Data By Vehicle Type<a class="headerlink" href="#collision-data-by-vehicle-type" title="Permalink to this headline">#</a></h3>
+<p>This chart breaks down collisions between injuries and fatalities. It also breaks down collisions by vehicle type either pedestrian, motorist, or bicycle. This helped us to understand where the bulk of fatal crashes were occurring and on what kind of vehicle. While we did not choose to continue this exploration, further analysis could delve into what areas of the city were particularly prone to crashes for different kinds of transporters (i.e streets with no bike lanes may have higher risk of fatality).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Image</span><span class="p">(</span><span class="s2">&quot;Charts/Collisons by Vehicle.png&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/ce6d0982c923987703819a3d8b669691879be59e9f9f0902613b6f9ca69aae82.png" src="_images/ce6d0982c923987703819a3d8b669691879be59e9f9f0902613b6f9ca69aae82.png" />
+</div>
+</div>
+</section>
+<section id="collisions-by-contributing-factor-vehicle-1">
+<h3>Collisions By Contributing Factor Vehicle 1<a class="headerlink" href="#collisions-by-contributing-factor-vehicle-1" title="Permalink to this headline">#</a></h3>
+<p>We plotted the top 10 occurrences in the Contributing Factor Vehicle 1 column. The biggest reasons were Driver Inattention/Distraction, Failure to Yield Right of Way, and Following Too Closely.</p>
+<p>There are 4 more Contributing Factor columns, but we decided not to make plots for these columns as the biggest reason in the pie chart was consistently Unspecified, so the visualizations were not very helpful.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Image</span><span class="p">(</span><span class="s2">&quot;Charts/Collisions by Contributing Factor.png&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/1784c4aa8a591e2fedf18846a83b9ec5993f8927ac6cb3b7598d90d894085f93.png" src="_images/1784c4aa8a591e2fedf18846a83b9ec5993f8927ac6cb3b7598d90d894085f93.png" />
+</div>
+</div>
+</section>
+<section id="collisions-by-vehicle-type-code-1">
+<h3>Collisions By Vehicle Type Code 1<a class="headerlink" href="#collisions-by-vehicle-type-code-1" title="Permalink to this headline">#</a></h3>
+<p>We also plotted the top 10 occurrences in the Vehicle Type Code 1 column to see which types of vehicles were the most involved in collisions and if that could inform safety designs for these cars in the future or other policies. Sedans and Station Wagons/Sport Utility Vehicles were the most prevalent in collisions.</p>
+<p>Similar to the Contributing Factor columns, we decided not to make plots for the remaining Vehicle Type Code columns as they came out to roughly the same breakdown.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Image</span><span class="p">(</span><span class="s2">&quot;Charts/Collisions by Vehicle Type Code 1.png&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/2d8d3ed2ac096080abb17507b4258a7b33d1b5935dfc5e7b4a5f8f7f3b2842c5.png" src="_images/2d8d3ed2ac096080abb17507b4258a7b33d1b5935dfc5e7b4a5f8f7f3b2842c5.png" />
+</div>
+</div>
+</section>
+<section id="collisions-by-month">
+<h3>Collisions By Month<a class="headerlink" href="#collisions-by-month" title="Permalink to this headline">#</a></h3>
+<p>Our next variable of investigation was collisions by time, starting off with month. February has the least number of collisions while mid April-June have the highest, almost identical number. From January to June, the count increases with a sharp spike from February to March. After June, the count drops slightly but we see a sharp decline from October-November.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Image</span><span class="p">(</span><span class="s2">&quot;Charts/Collisions by Month.png&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/c7ea25d69fa53ab25cdab0b374f1f846ee0d63d96e534e5bd3da6ba108b4d3cc.png" src="_images/c7ea25d69fa53ab25cdab0b374f1f846ee0d63d96e534e5bd3da6ba108b4d3cc.png" />
+</div>
+</div>
+</section>
+<section id="collisions-by-day">
+<h3>Collisions By Day<a class="headerlink" href="#collisions-by-day" title="Permalink to this headline">#</a></h3>
+<p>Then we looked at collisions on each day of the week. Monday-Thursday and Saturday had roughly identical counts while Friday had the highest count and Sunday had the lowest count. This intuitively makes sense considering peoples’ work weeks and behaviors on Friday and Sunday.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Image</span><span class="p">(</span><span class="s2">&quot;Charts/Collisions by Day.png&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/1ca65b197ec0c54fb9dffce6d3317796827ccc01d5175a909fd2c42b6aaccaa4.png" src="_images/1ca65b197ec0c54fb9dffce6d3317796827ccc01d5175a909fd2c42b6aaccaa4.png" />
+</div>
+</div>
+</section>
+<section id="collisions-by-hour-stratified-by-weekday-or-weekend">
+<h3>Collisions By Hour Stratified by Weekday or Weekend<a class="headerlink" href="#collisions-by-hour-stratified-by-weekday-or-weekend" title="Permalink to this headline">#</a></h3>
+<p>Considering that weekends seem to have more collisions, we next looked at collisions by hour of day stratified by weekday or weekend. The lines follow roughly similar paths.</p>
+<p>The weekday line dips around 1am and stays low until 5 am roughly, after which the line sharply increases around 8am presumably when people are driving to work. The line fluctuates downward until 1pm to 3pm and then sharply declines at 6 to 11pm when people are coming home from work, taking children to their activities, going out for plans, or more.</p>
+<p>The weekend line dips as well, but has a slight spike from 3-4am, and steadily rises from 7am to 4pm and then slowly declines after that.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Image</span><span class="p">(</span><span class="s2">&quot;Charts/Collisions Weekday vs. Weekend.png&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/f06c457658a59ffc7470ffb0f5a0ccdf420a0a33821246f3272a17ec0f35846d.png" src="_images/f06c457658a59ffc7470ffb0f5a0ccdf420a0a33821246f3272a17ec0f35846d.png" />
+</div>
+</div>
+</section>
+<section id="collisions-by-hour-from-2014-2022">
+<h3>Collisions by Hour from 2014-2022<a class="headerlink" href="#collisions-by-hour-from-2014-2022" title="Permalink to this headline">#</a></h3>
+<p>We aggregated collisions by average count over each hour from 2014-2022. 2014-2019 have roughly similar lines. 2020-2022 aren’t part of that group of lines. 2021 has the highest average count, perhaps because the pandemic was ending and people were exercising their freedom more. 2020 is in the middle of the 2014-2019 group of lines and 2021-2022 group, which is interesting. We had a hypothesis that 2020 would have the lowest average count due to the pandemic but that’s rather 2015.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Image</span><span class="p">(</span><span class="s2">&quot;Charts/Collisions 2015-2022.png&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/8acdba6f5272fb074a1b3c6b6b41760f9ac31dabe00f6bd929c3df2d8025aee0.png" src="_images/8acdba6f5272fb074a1b3c6b6b41760f9ac31dabe00f6bd929c3df2d8025aee0.png" />
+</div>
+</div>
+</section>
+<section id="total-collisions-from-2014-2022">
+<h3>Total Collisions from 2014-2022<a class="headerlink" href="#total-collisions-from-2014-2022" title="Permalink to this headline">#</a></h3>
+<p>The final plot we made as part of EDA was aggregating collisions over 2014-2022. Each year varies differently, with 2021 have the highest count and 2018 with the lowest count.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Image</span><span class="p">(</span><span class="s2">&quot;Charts/Plot.png&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/700fb42952dca98b89b4695159387184c91af714d3888c455a0b5f2d75dcb587.png" src="_images/700fb42952dca98b89b4695159387184c91af714d3888c455a0b5f2d75dcb587.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="modeling">
+<h2>Modeling<a class="headerlink" href="#modeling" title="Permalink to this headline">#</a></h2>
+<p>After our EDA, it became clear to our group that one area of exploration we wanted to dive further in was reguarding predicting where crashes occur most frequently. Specifically, we want to answer which locations in NY have the highest proportion of crashes, and if we are able to predict the amount of crashes in certain locations. We also want to explore if we can predict the severity of car crashes and potentially how that may be mitigated.</p>
+<p>We wanted to see if we are able to predict the severity of a crash. First we define severity under the following criteria:</p>
+<p>Minor injury level: 2 or less people injured, no death reported. Label: 0</p>
+<p>Major injury level: 3 or more people injured, no death reported. Label: 1</p>
+<p>Fatal injury level: at least one person killed. Label:</p>
+<p>From here, we developed a classification machine learning model using a random forest.</p>
+<p>Our random forrest model had a training accuracy of 91.71 %</p>
+<p>In this case, a 90% accuracy rate for a random forest model means that the model is correctly predicting the injury severity of car accidents about 90% of the time. While this is a good start, there are several ways to further improve the model’s accuracy.</p>
+<p>One of the first steps to improve the model’s accuracy is to explore feature engineering. Feature engineering involves selecting relevant features that are essential for predicting the outcome. In this case, the selected features might not be sufficient to accurately predict the injury severity of car accidents. Additional features such as weather conditions, road conditions, speed limits, or driver demographics may help improve the model’s accuracy.</p>
+<p>Another way to improve the model’s performance is through hyperparameter tuning. Random forest models have several hyperparameters that can significantly impact their performance, such as the number of trees, maximum depth, and minimum samples per leaf. Tuning these hyperparameters using techniques like grid search or random search can help identify the optimal hyperparameters for the model, ultimately improving its performance.</p>
+<p>Feature selection is also another approach to improve the model’s accuracy. In some cases, certain features might not contribute to improving the model’s performance or could be causing multicollinearity. Using feature selection techniques such as recursive feature elimination, LASSO regression, or chi-squared test can help identify the most relevant features for the model, ultimately improving its performance.</p>
+<p>Finally, using ensemble methods such as bagging, boosting, or stacking can help improve the overall performance of the model. Ensemble methods combine multiple models to make more accurate predictions. By combining different models, ensemble methods can help mitigate the weaknesses of individual models, resulting in a more accurate prediction overall.</p>
+<p>In conclusion, while a 90% accuracy rate for a random forest model is impressive, there are several ways to improve its accuracy even further. Exploring feature engineering, hyperparameter tuning, feature selection, and ensemble methods are all viable options to enhance the model’s performance and make it more accurate in predicting injury severity for car accidents.</p>
+</section>
+<section id="conclusion">
+<h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
+<p>Our random forest model is able to identify quite strong at being able to predict the severity of the crash. We were able to do this on a large sample and believe that our results are reproducible and accurate.</p>
+<p>Other areas of exploration may be tackling one of our inital questions: which areas of New York are most prone to crashes? This may be used to help government officals change the road structure or traffic pattern to be better for people and safer. We also think this could be coupled with our analysis in this paper. If we are able to cut down on fatal crashes with road changes, countless number of lives can be saved in a year.</p>
+</section>
+<section id="author-contributions">
+<h2>Author Contributions<a class="headerlink" href="#author-contributions" title="Permalink to this headline">#</a></h2>
+<p>Saumya Choudhary: Analysis file, EDA, Main notebook write up</p>
+<p>Ashwin Bindra: EDA, Main notebook write up</p>
+<p>Minghua Tan: Repo structure, makefile, Enviroment file</p>
+<p>Tianyi Chen: Analysis file, EDA - Bivariate Analysis, Modelling and installable package</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data">Data</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eda">EDA</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-total-casualties">Plotting Total Casualties</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#collision-data-by-borough">Collision Data By Borough</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#collision-data-by-zipcode">Collision Data By Zipcode</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#collision-data-by-vehicle-type">Collision Data By Vehicle Type</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#collisions-by-contributing-factor-vehicle-1">Collisions By Contributing Factor Vehicle 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#collisions-by-vehicle-type-code-1">Collisions By Vehicle Type Code 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#collisions-by-month">Collisions By Month</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#collisions-by-day">Collisions By Day</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#collisions-by-hour-stratified-by-weekday-or-weekend">Collisions By Hour Stratified by Weekday or Weekend</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#collisions-by-hour-from-2014-2022">Collisions by Hour from 2014-2022</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#total-collisions-from-2014-2022">Total Collisions from 2014-2022</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modeling">Modeling</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#author-contributions">Author Contributions</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Minghua Tan
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
