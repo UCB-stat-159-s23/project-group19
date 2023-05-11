@@ -19,8 +19,8 @@ The dataset can be found at this link: https://catalog.data.gov/dataset/motor-ve
     conda install ipykernel
     python -m ipykernel install --user --name final_proj --display-name "IPython - final_proj
 ```
-### Running the JupyterBook
-You can run the JupyterBook with this link (also above): https://mybinder.org/v2/gh/UCB-stat-159-s23/project-group19.git/HEAD
+### Opening the JupyterBook
+You can open the JupyterBook with this link (also above): https://ucb-stat-159-s23.github.io/project-group19/Main.html
 
 ## Repository Structure
 The repository is structured as follows: 
