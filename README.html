@@ -3,13 +3,13 @@
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>&lt;no title&gt; &#8212; FinalProject</title>
+    <title>Useful Commands &#8212; FinalProject</title>
   
   
   
@@ -44,7 +44,6 @@
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
@@ -62,11 +61,12 @@ const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'README';</script>
+    <link rel="canonical" href="/user/ming.7an//proxy/absolute/8000/README.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Final Project: original data analysis" href="project-description.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:language" content="None"/>
   </head>
   
   
@@ -135,14 +135,8 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   
-    
-    
-      
-    
-    
-    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
   
+    <p class="title logo__title">FinalProject</p>
   
 </a></div>
         <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
@@ -151,7 +145,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1 current active">
                 <a class="reference internal" href="#">
-                    <no title>
+                    Useful Commands
                 </a>
             </li>
         </ul>
@@ -345,7 +339,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1><no title></h1>
+    <h1>Useful Commands</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -355,8 +349,9 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-an-environment-from-an-environment-yml-file">Creating an environment from an environment.yml file:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#to-see-the-jupyter-book-by-running">To see the Jupyter Book by running</a></li>
 </ul>
-
             </nav>
         </div>
     </div>
@@ -369,11 +364,29 @@ document.write(`
                   
   <p><a class="reference external" href="https://ucb-stat-159-s23.github.io/project-group19/"><img alt="Jupyter Book Badge" src="https://jupyterbook.org/badge.svg" /></a>
 <a class="reference external" href="https://mybinder.org/v2/gh/UCB-stat-159-s23/project-group19.git/HEAD"><img alt="Binder" src="https://mybinder.org/badge_logo.svg" /></a></p>
+<section id="useful-commands">
+<h1>Useful Commands<a class="headerlink" href="#useful-commands" title="Permalink to this headline">#</a></h1>
+<section id="creating-an-environment-from-an-environment-yml-file">
+<h2>Creating an environment from an environment.yml file:<a class="headerlink" href="#creating-an-environment-from-an-environment-yml-file" title="Permalink to this headline">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">conda</span> <span class="n">env</span> <span class="n">create</span> <span class="o">-</span><span class="n">f</span> <span class="n">environment</span><span class="o">.</span><span class="n">yml</span> 
+    <span class="n">conda</span> <span class="n">activate</span> <span class="n">final_proj</span>
+    <span class="n">conda</span> <span class="n">install</span> <span class="n">ipykernel</span>
+    <span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">ipykernel</span> <span class="n">install</span> <span class="o">--</span><span class="n">user</span> <span class="o">--</span><span class="n">name</span> <span class="n">final_proj</span> <span class="o">--</span><span class="n">display</span><span class="o">-</span><span class="n">name</span> <span class="s2">&quot;IPython - final_proj</span>
+</pre></div>
+</div>
+</section>
+<section id="to-see-the-jupyter-book-by-running">
+<h2>To see the Jupyter Book by running<a class="headerlink" href="#to-see-the-jupyter-book-by-running" title="Permalink to this headline">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">_build</span><span class="o">/</span><span class="n">html</span>
+<span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">http</span><span class="o">.</span><span class="n">server</span>
+</pre></div>
+</div>
+<p>and then heading to this URL: <a class="reference external" href="https://stat159.datahub.berkeley.edu/user-redirect/proxy/8000/index.html">https://stat159.datahub.berkeley.edu/user-redirect/proxy/8000/index.html</a>.</p>
 <p><a class="reference external" href="https://classroom.github.com/a/LiaEl886"><img alt="Review Assignment Due Date" src="https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg" /></a></p>
+</section>
 <div class="toctree-wrapper compound">
 </div>
-<div class="toctree-wrapper compound">
-</div>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -433,8 +446,9 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-an-environment-from-an-environment-yml-file">Creating an environment from an environment.yml file:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#to-see-the-jupyter-book-by-running">To see the Jupyter Book by running</a></li>
 </ul>
-
   </nav></div>
 
 </div></div>
