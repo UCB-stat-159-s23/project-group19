@@ -19,15 +19,12 @@ The dataset can be found at this link: https://catalog.data.gov/dataset/motor-ve
     conda install ipykernel
     python -m ipykernel install --user --name final_proj --display-name "IPython - final_proj
 ```
-### To see the Jupyter Book by running
+### Running the JupyterBook
 ```
 cd _build/html
 python -m http.server
 ```
 and then heading to this URL: https://stat159.datahub.berkeley.edu/user-redirect/proxy/8000/index.html.
-
-## Testing
-To test the analysis functions, navigate to the root directory and run `pytest`.
 
 ## Repository Structure
 The repository is structured as follows: 
