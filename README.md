@@ -2,7 +2,7 @@
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/UCB-stat-159-s23/project-group19.git/HEAD)
 
 ## Project Overview
-In our project, we explored the Motor Vehicles Collisions dataset which comes from the city of New York. The dataset contains information on motor vehicle crashes that occured from 2012-2013.
+In our project, we explored the Motor Vehicles Collisions dataset which comes from the city of New York. The dataset contains information on motor vehicle crashes that occured from 2014-2022.
 
 Motor crashes are a major public health and safety concern, particularly in urban areas with high traffic volumes such as New York City. In recent years, the city has seen a significant increase in the number of motor crashes, leading to a growing concern about their impact on public safety, transportation infrastructure, and economic productivity. To address these concerns, data analysis can play a crucial role in identifying the factors that contribute to motor crashes and developing effective strategies for prevention and mitigation.
 
@@ -19,6 +19,7 @@ The dataset can be found at this link: https://catalog.data.gov/dataset/motor-ve
     conda install ipykernel
     python -m ipykernel install --user --name final_proj --display-name "IPython - final_proj
 ```
+<<<<<<< HEAD
 ### To see the Jupyter Book by running
 ```
 cd _build/html
@@ -32,11 +33,14 @@ jupyter-book config sphinx .
 sphinx-build  . _build/html  -D html_baseurl=${JUPYTERHUB_SERVICE_PREFIX}/proxy/absolute/8000
 pip install ghp-import
 ghp-import -n -p -f _build/html
-python -m http.server
 ```
 
 ## Testing
 To test the analysis functions, navigate to the root directory and run `pytest`.
+=======
+### Running the JupyterBook
+You can run the JupyterBook with this link (also above): https://mybinder.org/v2/gh/UCB-stat-159-s23/project-group19.git/HEAD
+>>>>>>> 672edef824dd9f3adc6b50ab0013d3be77ba1ddd
 
 ## Repository Structure
 The repository is structured as follows: 
