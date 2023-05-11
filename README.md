@@ -32,9 +32,9 @@ To test the analysis functions, navigate to the root directory and run `pytest`.
 ## Repository Structure
 The repository is structured as follows: 
 
-data: Contains the raw and processed datasets we used.
-tool: Contains utils.py, housing the functions used in the Analysis notebook. In this folder as well is a tests folder to run tests on these functions.
-Analysis.ipynb: Contains the code we wrote to analyze the data. We did EDA and modelling.
-Main.ipynb: Contains a summary of the code and analysis of the EDA and modelling from Analysis.ipynb
-environment.yml: Contains all the packages and dependencies needed for the project.
-Makefile: Contains all the information needed to build a JupyterBook for this project.
+- data: Contains the raw and processed datasets we used.
+- tool: Contains utils.py, housing the functions used in the Analysis notebook. In this folder as well is a tests folder to run tests on these functions.
+- Analysis.ipynb: Contains the code we wrote to analyze the data. We did EDA and modelling.
+- Main.ipynb: Contains a summary of the code and analysis of the EDA and modelling from Analysis.ipynb
+- environment.yml: Contains all the packages and dependencies needed for the project.
+- Makefile: Contains all the information needed to build a JupyterBook for this project.
