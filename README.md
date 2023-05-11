@@ -20,11 +20,7 @@ The dataset can be found at this link: https://catalog.data.gov/dataset/motor-ve
     python -m ipykernel install --user --name final_proj --display-name "IPython - final_proj
 ```
 ### Running the JupyterBook
-```
-cd _build/html
-python -m http.server
-```
-and then heading to this URL: https://stat159.datahub.berkeley.edu/user-redirect/proxy/8000/index.html.
+You can run the JupyterBook with this link (also above): https://mybinder.org/v2/gh/UCB-stat-159-s23/project-group19.git/HEAD
 
 ## Repository Structure
 The repository is structured as follows: 
