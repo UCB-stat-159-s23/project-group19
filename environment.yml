@@ -1,0 +1,17 @@
+name: final_proj
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.9
+  - ipykernel==5.5
+  - numpy==1.23
+  - scipy==1.8
+  - matplotlib==3.5
+  - geopandas
+  - geoplot
+  - jupyter-book==0.15.0
+  - jupyter-sphinx==0.4.0
+  - myst-nb==0.17.1
+  - ghp-import
+prefix: /home/jovyan/envs/final_proj
