@@ -26,7 +26,6 @@ cd _build/html
 python -m http.server
 ```
 and then heading to this URL: https://stat159.datahub.berkeley.edu/user-redirect/proxy/8000/index.html.
-
 ### To build the JupyterBook
 ```
 jupyter-book build .
