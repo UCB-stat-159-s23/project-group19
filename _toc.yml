@@ -2,10 +2,12 @@
 # Learn more at https://jupyterbook.org/customize/toc.html
 
 format: jb-book
-root: README.md
+root: Main.ipynb
 parts:
   - caption: Main Menu
     chapters:
+    - file: README.md
+      title: About Us
     - file: project-description.md
       title: Project Description
     - file: Analysis.ipynb
