@@ -19,8 +19,7 @@ The dataset can be found at this link: https://catalog.data.gov/dataset/motor-ve
     conda install ipykernel
     python -m ipykernel install --user --name final_proj --display-name "IPython - final_proj
 ```
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 ### To see the Jupyter Book by running
 ```
 cd _build/html
@@ -38,10 +37,9 @@ ghp-import -n -p -f _build/html
 
 ## Testing
 To test the analysis functions, navigate to the root directory and run `pytest`.
-=======
+
 ### Running the JupyterBook
 You can run the JupyterBook with this link (also above): https://mybinder.org/v2/gh/UCB-stat-159-s23/project-group19.git/HEAD
-
 
 ### Opening the JupyterBook
 You can open the JupyterBook with this link (also above): https://ucb-stat-159-s23.github.io/project-group19/Main.html
