@@ -12,7 +12,8 @@ This paper aims to analyze the data on motor crashes in New York City over the p
 
 <h2>Dataset</h2>
 
-The dataset can be found at this link: <https://catalog.data.gov/dataset/motor-vehicle-collisions-crashes>.
+The dataset can be found at this link: 
+<https://catalog.data.gov/dataset/motor-vehicle-collisions-crashes>.
 
 <h2>Environment</h2>
 
@@ -20,8 +21,8 @@ The dataset can be found at this link: <https://catalog.data.gov/dataset/motor-v
 
 
 <h2>Useful Commands</h2>
-
 <h3>Creating an environment from an environment.yml file:</h3>
+
 
 ```
     conda env create -f environment.yml 
@@ -31,13 +32,16 @@ The dataset can be found at this link: <https://catalog.data.gov/dataset/motor-v
 ```
 
 <h3> To see the Jupyter Book by running</h3>
+
 ```
 cd _build/html
 python -m http.server
 ```
-and then heading to this URL: <https://stat159.datahub.berkeley.edu/user-redirect/proxy/8000/index.html>.
+and then heading to this URL:
+<https://stat159.datahub.berkeley.edu/user-redirect/proxy/8000/index.html>.
 
 <h3> To build the JupyterBook </h3>
+
 ```
 jupyter-book build .
 jupyter-book config sphinx .
@@ -52,11 +56,13 @@ To test the analysis functions, navigate to the root directory and run `pytest`.
 
 <h2> Running the JupyterBook </h2>
 
-You can run the JupyterBook with this link (also above):<https://mybinder.org/v2/gh/UCB-stat-159-s23/project-group19.git/HEAD>
+You can run the JupyterBook with this link (also above):
+<https://mybinder.org/v2/gh/UCB-stat-159-s23/project-group19.git/HEAD>
 
 <h2> Opening the JupyterBook</h2>
 
-You can open the JupyterBook with this link (also above): <https://ucb-stat-159-s23.github.io/project-group19/Main.html>
+You can open the JupyterBook with this link (also above):
+<https://ucb-stat-159-s23.github.io/project-group19/Main.html>
 
 <h2>Repository Structure</h2>
 
