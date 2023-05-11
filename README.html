@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Useful Commands &#8212; FinalProject</title>
+    <title>Project Overview &#8212; FinalProject</title>
   
   
   
@@ -158,7 +158,11 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Main Menu</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">About Us</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Project Overview</a></li>
+
+
+
+
 <li class="toctree-l1"><a class="reference internal" href="project-description.html">Project Description</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Analysis.html">Analysis Overview</a></li>
 
@@ -347,7 +351,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Useful Commands</h1>
+    <h1>Project Overview</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -357,9 +361,23 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Project Overview</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset">Dataset</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#useful-commands">Useful Commands</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-an-environment-from-an-environment-yml-file">Creating an environment from an environment.yml file:</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#to-see-the-jupyter-book-by-running">To see the Jupyter Book by running</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#to-build-the-jupyterbook">To build the JupyterBook</a></li>
 </ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#testing">Testing</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#to-test-the-analysis-functions-navigate-to-the-root-directory-and-run-pytest">To test the analysis functions, navigate to the root directory and run <code class="docutils literal notranslate"><span class="pre">pytest</span></code>.</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-the-jupyterbook">Running the JupyterBook</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opening-the-jupyterbook">Opening the JupyterBook</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#repository-structure">Repository Structure</a></li>
+</ul>
+</li>
+</ul>
+
             </nav>
         </div>
     </div>
@@ -370,8 +388,18 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <p><a class="reference external" href="https://ucb-stat-159-s23.github.io/project-group19/"><img alt="Jupyter Book Badge" src="https://jupyterbook.org/badge.svg" /></a>
+  <p><a class="reference external" href="https://ucb-stat-159-s23.github.io/project-group19/Main.html"><img alt="Jupyter Book Badge" src="https://jupyterbook.org/badge.svg" /></a>
 <a class="reference external" href="https://mybinder.org/v2/gh/UCB-stat-159-s23/project-group19.git/HEAD"><img alt="Binder" src="https://mybinder.org/badge_logo.svg" /></a></p>
+<section id="project-overview">
+<h1>Project Overview<a class="headerlink" href="#project-overview" title="Permalink to this headline">#</a></h1>
+<p>In our project, we explored the Motor Vehicles Collisions dataset which comes from the city of New York. The dataset contains information on motor vehicle crashes that occured from 2014-2022.</p>
+<p>Motor crashes are a major public health and safety concern, particularly in urban areas with high traffic volumes such as New York City. In recent years, the city has seen a significant increase in the number of motor crashes, leading to a growing concern about their impact on public safety, transportation infrastructure, and economic productivity. To address these concerns, data analysis can play a crucial role in identifying the factors that contribute to motor crashes and developing effective strategies for prevention and mitigation.</p>
+<p>This paper aims to analyze the data on motor crashes in New York City over the past few years, with a focus on identifying the key factors associated with these incidents and proposing actionable solutions to reduce their frequency and severity. We aim to find a relationship between the data included and how severe the crashes are for people. We hope the analysis conducted in the project will lead key desicion makers to improving safety and road rules.</p>
+</section>
+<section id="dataset">
+<h1>Dataset<a class="headerlink" href="#dataset" title="Permalink to this headline">#</a></h1>
+<p>The dataset can be found at this link: <a class="reference external" href="https://catalog.data.gov/dataset/motor-vehicle-collisions-crashes">https://catalog.data.gov/dataset/motor-vehicle-collisions-crashes</a>.</p>
+</section>
 <section id="useful-commands">
 <h1>Useful Commands<a class="headerlink" href="#useful-commands" title="Permalink to this headline">#</a></h1>
 <section id="creating-an-environment-from-an-environment-yml-file">
@@ -382,6 +410,8 @@ document.write(`
     <span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">ipykernel</span> <span class="n">install</span> <span class="o">--</span><span class="n">user</span> <span class="o">--</span><span class="n">name</span> <span class="n">final_proj</span> <span class="o">--</span><span class="n">display</span><span class="o">-</span><span class="n">name</span> <span class="s2">&quot;IPython - final_proj</span>
 </pre></div>
 </div>
+<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</p>
 </section>
 <section id="to-see-the-jupyter-book-by-running">
 <h2>To see the Jupyter Book by running<a class="headerlink" href="#to-see-the-jupyter-book-by-running" title="Permalink to this headline">#</a></h2>
@@ -390,7 +420,42 @@ document.write(`
 </pre></div>
 </div>
 <p>and then heading to this URL: <a class="reference external" href="https://stat159.datahub.berkeley.edu/user-redirect/proxy/8000/index.html">https://stat159.datahub.berkeley.edu/user-redirect/proxy/8000/index.html</a>.</p>
-<p><a class="reference external" href="https://classroom.github.com/a/LiaEl886"><img alt="Review Assignment Due Date" src="https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg" /></a></p>
+</section>
+<section id="to-build-the-jupyterbook">
+<h2>To build the JupyterBook<a class="headerlink" href="#to-build-the-jupyterbook" title="Permalink to this headline">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>jupyter-book build .
+jupyter-book config sphinx .
+sphinx-build  . _build/html  -D html_baseurl=${JUPYTERHUB_SERVICE_PREFIX}/proxy/absolute/8000
+pip install ghp-import
+ghp-import -n -p -f _build/html
+</pre></div>
+</div>
+</section>
+</section>
+<section id="testing">
+<h1>Testing<a class="headerlink" href="#testing" title="Permalink to this headline">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="to-test-the-analysis-functions-navigate-to-the-root-directory-and-run-pytest">
+<h1>To test the analysis functions, navigate to the root directory and run <code class="docutils literal notranslate"><span class="pre">pytest</span></code>.<a class="headerlink" href="#to-test-the-analysis-functions-navigate-to-the-root-directory-and-run-pytest" title="Permalink to this headline">#</a></h1>
+<section id="running-the-jupyterbook">
+<h2>Running the JupyterBook<a class="headerlink" href="#running-the-jupyterbook" title="Permalink to this headline">#</a></h2>
+<p>You can run the JupyterBook with this link (also above): <a class="reference external" href="https://mybinder.org/v2/gh/UCB-stat-159-s23/project-group19.git/HEAD">https://mybinder.org/v2/gh/UCB-stat-159-s23/project-group19.git/HEAD</a></p>
+</section>
+<section id="opening-the-jupyterbook">
+<h2>Opening the JupyterBook<a class="headerlink" href="#opening-the-jupyterbook" title="Permalink to this headline">#</a></h2>
+<p>You can open the JupyterBook with this link (also above): <a class="reference external" href="https://ucb-stat-159-s23.github.io/project-group19/Main.html">https://ucb-stat-159-s23.github.io/project-group19/Main.html</a></p>
+</section>
+<section id="repository-structure">
+<h2>Repository Structure<a class="headerlink" href="#repository-structure" title="Permalink to this headline">#</a></h2>
+<p>The repository is structured as follows:</p>
+<ul class="simple">
+<li><p>data: Contains the raw and processed datasets we used.</p></li>
+<li><p>tool: Contains <a class="reference external" href="http://utils.py">utils.py</a>, housing the functions used in the Analysis notebook. In this folder as well is a tests folder to run tests on these functions.</p></li>
+<li><p>Analysis.ipynb: Contains the code we wrote to analyze the data. We did EDA and modelling.</p></li>
+<li><p>Main.ipynb: Contains a summary of the code and analysis of the EDA and modelling from Analysis.ipynb</p></li>
+<li><p>environment.yml: Contains all the packages and dependencies needed for the project.</p></li>
+<li><p>Makefile: Contains all the information needed to build a JupyterBook for this project.</p></li>
+</ul>
 </section>
 </section>
 
@@ -461,9 +526,23 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Project Overview</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset">Dataset</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#useful-commands">Useful Commands</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-an-environment-from-an-environment-yml-file">Creating an environment from an environment.yml file:</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#to-see-the-jupyter-book-by-running">To see the Jupyter Book by running</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#to-build-the-jupyterbook">To build the JupyterBook</a></li>
 </ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#testing">Testing</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#to-test-the-analysis-functions-navigate-to-the-root-directory-and-run-pytest">To test the analysis functions, navigate to the root directory and run <code class="docutils literal notranslate"><span class="pre">pytest</span></code>.</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-the-jupyterbook">Running the JupyterBook</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opening-the-jupyterbook">Opening the JupyterBook</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#repository-structure">Repository Structure</a></li>
+</ul>
+</li>
+</ul>
+
   </nav></div>
 
 </div></div>
