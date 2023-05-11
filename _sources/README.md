@@ -1,9 +1,13 @@
+
 [![Jupyter Book Badge](https://jupyterbook.org/badge.svg)](< https://ucb-stat-159-s23.github.io/project-group19/Main.html>)
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/UCB-stat-159-s23/project-group19.git/HEAD?labpath=Main.ipynb)
 
 
 <h1>Project Overview</h1>
-[title](https://ucb-stat-159-s23.github.io/project-group19/README.html)
+
+Github page: <https://github.com/UCB-stat-159-s23/project-group19>
+
+
 In our project, we explored the Motor Vehicles Collisions dataset which comes from the city of New York. The dataset contains information on motor vehicle crashes that occured from 2014-2022.
 
 Motor crashes are a major public health and safety concern, particularly in urban areas with high traffic volumes such as New York City. In recent years, the city has seen a significant increase in the number of motor crashes, leading to a growing concern about their impact on public safety, transportation infrastructure, and economic productivity. To address these concerns, data analysis can play a crucial role in identifying the factors that contribute to motor crashes and developing effective strategies for prevention and mitigation.
@@ -12,7 +16,8 @@ This paper aims to analyze the data on motor crashes in New York City over the p
 
 <h2>Dataset</h2>
 
-The dataset can be found at this link: 
+The dataset can be found at this link:
+
 <https://catalog.data.gov/dataset/motor-vehicle-collisions-crashes>.
 
 <h2>Environment</h2>
@@ -34,8 +39,8 @@ The dataset can be found at this link:
 <h3> To see the Jupyter Book by running</h3>
 
 ```
-cd _build/html
-python -m http.server
+    cd _build/html
+    python -m http.server
 ```
 and then heading to this URL:
 <https://stat159.datahub.berkeley.edu/user-redirect/proxy/8000/index.html>.
@@ -43,11 +48,11 @@ and then heading to this URL:
 <h3> To build the JupyterBook </h3>
 
 ```
-jupyter-book build .
-jupyter-book config sphinx .
-sphinx-build  . _build/html  -D html_baseurl=${JUPYTERHUB_SERVICE_PREFIX}/proxy/absolute/8000
-pip install ghp-import
-ghp-import -n -p -f _build/html
+    jupyter-book build .
+    jupyter-book config sphinx .
+    sphinx-build  . _build/html  -D html_baseurl=${JUPYTERHUB_SERVICE_PREFIX}/proxy/absolute/8000
+    pip install ghp-import
+    ghp-import -n -p -f _build/html
 ```
 
 <h3>Testing</h3>
@@ -57,11 +62,13 @@ To test the analysis functions, navigate to the root directory and run `pytest`.
 <h2> Running the JupyterBook </h2>
 
 You can run the JupyterBook with this link (also above):
+
 <https://mybinder.org/v2/gh/UCB-stat-159-s23/project-group19.git/HEAD>
 
 <h2> Opening the JupyterBook</h2>
 
 You can open the JupyterBook with this link (also above):
+
 <https://ucb-stat-159-s23.github.io/project-group19/Main.html>
 
 <h2>Repository Structure</h2>
