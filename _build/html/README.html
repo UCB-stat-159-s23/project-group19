@@ -376,7 +376,8 @@ In our project, we explored the Motor Vehicles Collisions dataset which comes fr
 <p>Motor crashes are a major public health and safety concern, particularly in urban areas with high traffic volumes such as New York City. In recent years, the city has seen a significant increase in the number of motor crashes, leading to a growing concern about their impact on public safety, transportation infrastructure, and economic productivity. To address these concerns, data analysis can play a crucial role in identifying the factors that contribute to motor crashes and developing effective strategies for prevention and mitigation.</p>
 <p>This paper aims to analyze the data on motor crashes in New York City over the past few years, with a focus on identifying the key factors associated with these incidents and proposing actionable solutions to reduce their frequency and severity. We aim to find a relationship between the data included and how severe the crashes are for people. We hope the analysis conducted in the project will lead key desicion makers to improving safety and road rules.</p>
 <h2>Dataset</h2>
-<p>The dataset can be found at this link: <a class="reference external" href="https://catalog.data.gov/dataset/motor-vehicle-collisions-crashes">https://catalog.data.gov/dataset/motor-vehicle-collisions-crashes</a>.</p>
+<p>The dataset can be found at this link:
+<a class="reference external" href="https://catalog.data.gov/dataset/motor-vehicle-collisions-crashes">https://catalog.data.gov/dataset/motor-vehicle-collisions-crashes</a>.</p>
 <h2>Environment</h2>
 <p><a class="reference external" href="https://mybinder.org/v2/gh/UCB-stat-159-s23/project-group19.git/HEAD"><img alt="Binder" src="https://mybinder.org/badge_logo.svg" /></a></p>
 <h2>Useful Commands</h2>
@@ -388,25 +389,28 @@ In our project, we explored the Motor Vehicles Collisions dataset which comes fr
 </pre></div>
 </div>
 <h3> To see the Jupyter Book by running</h3>
-```
-cd _build/html
-python -m http.server
-```
-and then heading to this URL: <https://stat159.datahub.berkeley.edu/user-redirect/proxy/8000/index.html>.
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">_build</span><span class="o">/</span><span class="n">html</span>
+<span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">http</span><span class="o">.</span><span class="n">server</span>
+</pre></div>
+</div>
+<p>and then heading to this URL:
+<a class="reference external" href="https://stat159.datahub.berkeley.edu/user-redirect/proxy/8000/index.html">https://stat159.datahub.berkeley.edu/user-redirect/proxy/8000/index.html</a>.</p>
 <h3> To build the JupyterBook </h3>
-```
-jupyter-book build .
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>jupyter-book build .
 jupyter-book config sphinx .
 sphinx-build  . _build/html  -D html_baseurl=${JUPYTERHUB_SERVICE_PREFIX}/proxy/absolute/8000
 pip install ghp-import
 ghp-import -n -p -f _build/html
-```
+</pre></div>
+</div>
 <h3>Testing</h3>
 <p>To test the analysis functions, navigate to the root directory and run <code class="docutils literal notranslate"><span class="pre">pytest</span></code>.</p>
 <h2> Running the JupyterBook </h2>
-<p>You can run the JupyterBook with this link (also above):<a class="reference external" href="https://mybinder.org/v2/gh/UCB-stat-159-s23/project-group19.git/HEAD">https://mybinder.org/v2/gh/UCB-stat-159-s23/project-group19.git/HEAD</a></p>
+<p>You can run the JupyterBook with this link (also above):
+<a class="reference external" href="https://mybinder.org/v2/gh/UCB-stat-159-s23/project-group19.git/HEAD">https://mybinder.org/v2/gh/UCB-stat-159-s23/project-group19.git/HEAD</a></p>
 <h2> Opening the JupyterBook</h2>
-<p>You can open the JupyterBook with this link (also above): <a class="reference external" href="https://ucb-stat-159-s23.github.io/project-group19/Main.html">https://ucb-stat-159-s23.github.io/project-group19/Main.html</a></p>
+<p>You can open the JupyterBook with this link (also above):
+<a class="reference external" href="https://ucb-stat-159-s23.github.io/project-group19/Main.html">https://ucb-stat-159-s23.github.io/project-group19/Main.html</a></p>
 <h2>Repository Structure</h2>
 <p>The repository is structured as follows:</p>
 <ul class="simple">
